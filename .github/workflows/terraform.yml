@@ -21,8 +21,8 @@ env:
   EKS_CLUSTER: vprofile-eks
   
 
-  jobs:
-    terraform:
+jobs:
+   terraform:
       runs-on: ubuntu-latest
       defaults:
         run:
