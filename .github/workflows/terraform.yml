@@ -77,7 +77,7 @@ jobs:
         - name: terraform getconfig
           id: getconfig
           if: steps.apply.outcome == 'success'
-          run: aws eks update-kubeconfig --region $AWS_REGION --name ${{EKS_CLUSTER}}
+          run: aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER
 
         - name: Install Ingress Controller
           if: step.apply.outcome == 'success' && step.getconfig.outcome == 'success'
