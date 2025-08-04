@@ -11,10 +11,14 @@ variable "clusterName" {
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ###
 =======
 ####
 >>>>>>> stage
 =======
 #####karim
+>>>>>>> stage
+=======
+#####klll
 >>>>>>> stage
