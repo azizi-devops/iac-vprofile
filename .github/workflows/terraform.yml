@@ -72,12 +72,12 @@ jobs:
           with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws-region: $AWS_REGION 
+            aws-region: ${{ env.AWS_REGION }}
     
         - name: terraform getconfig
           id: getconfig
           if: steps.apply.outcome == 'success'
-          run: aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER
+          run: aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name ${{ env.EKS_CLUSTER }}
 
         - name: Install Ingress Controller
           if: steps.apply.outcome == 'success' && steps.getconfig.outcome == 'success'
