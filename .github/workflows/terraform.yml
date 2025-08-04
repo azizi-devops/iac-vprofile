@@ -81,12 +81,7 @@ jobs:
 
         - name: Install Ingress Controller
           if: step.apply.outcome == 'success' && step.getconfig.outcome == 'success'
-          run: kubectl apply -f 
-
-        - name: Install k8s configmap
-          if: step.apply.outcome == 'success' && step.getconfig.outcome == 'success'
           run: kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.13.0/deploy/static/provider/aws/deploy.yaml
 
-        
 
-        
+       
